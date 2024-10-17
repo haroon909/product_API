@@ -20,7 +20,10 @@ const Get_Product_view = (req, res) => {
     const Validated_desc = Validator_desc.test(Product_Desc);
     const Validated_price = Validator_price.test(Product_Price);
     const Validated_cata = Validator_cata.test(Product_Cata);
-  
+  console.log(Validated_name)
+  console.log(Validated_desc)
+  console.log(Validated_price)
+  console.log(Validated_cata)
   
     if (!Product_Name || !Validated_name) {
       return res.status(400).send(
