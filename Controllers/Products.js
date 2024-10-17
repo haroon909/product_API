@@ -9,19 +9,19 @@ const Get_Product_view = (req, res) => {
   const Post_Product_view = (req, res) => {
     const { Product_Name, Product_Desc, Product_Price, Product_Cata } = req.body;
   
-    // Regular expression validators
-    const Validator_name = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/; // 3+ letters, underscores allowed
-    const Validator_desc = /^(?=.{3,})(?=.*[A-Za-z])([A-Za-z0-9\s\W]{3,100})$/; // 3+ letters, no limit on numbers/special chars, 3-100 words
-    const Validator_price = /^\$[0-9]{1,6}$/; // Starts with $, followed by 1-6 digits
-    const Validator_cata = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/; // 3+ letters, underscores allowed
+    
+    const Validator_name = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/; 
+    const Validator_desc = /^(?=.{3,})(?=.*[A-Za-z])([A-Za-z0-9\s\W]{3,100})$/; 
+    const Validator_price = /^\$[0-9]{1,6}$/; 
+    const Validator_cata = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/; 
   
-    // Validate inputs
+
     const Validated_name = Validator_name.test(Product_Name);
     const Validated_desc = Validator_desc.test(Product_Desc);
     const Validated_price = Validator_price.test(Product_Price);
     const Validated_cata = Validator_cata.test(Product_Cata);
   
-    // Error messages
+  
     if (!Product_Name || !Validated_name) {
       return res.status(400).send(
         "Product name cannot be null or empty. It must contain only letters and underscores ('_') for spacing, with no numbers or special characters, and must be at least 3 characters long."
@@ -46,7 +46,6 @@ const Get_Product_view = (req, res) => {
       );
     }
   
-    // Create new product object if all validations pass
     const New_Product = {
       Product_Name,
       Product_Desc,
