@@ -18,12 +18,13 @@ const Post_Product_view = (req, res) => {
   const Validated_price = Validator_price.test(Product_Price);
   const Validated_cata = Validator_cata.test(Product_Cata);
 
-  if(Validated_name == true){
-
-  }else{
-    return res.send('Product name cannot be null or empty."')
+  if (Validated_name == true) {
+  } else {
+    return res.send(
+      `Product name cannot be null or empty, product name must contain only letters and underscores ('_') for spacing, with no numbers or special characters, and must be at least 3 characters long.`
+    );
   }
-  
+
   return res.render("Products");
 };
 
