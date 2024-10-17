@@ -7,7 +7,7 @@ const Get_Product_view = (req, res) => {
 //http://localhost:5000/
 const Post_Product_view = (req, res) => {
     const {Product_Name, Product_Desc, Product_Price, Product_Cat} = req.body;
-    const Validator_Name 
+    const Validator_Name = 
   return res.render("Products");
 };
 
