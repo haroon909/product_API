@@ -5,10 +5,8 @@ const Get_Product_view = (req, res) => {
   };
   //@method Post
   //http://localhost:5000/
-  const Post_Product_view = (req, res) => {
-    if (!Array.isArray(req.body) || req.body.length === 0) {
-        return res.status(400).send("Request body must be a non-empty array.");
-      }
+  async function Post_Product_view  (req, res)  {
+  
     const { Product_Name, Product_Desc, Product_Price, Product_Cata } = req.body;
     const Validator_name = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/;
     const Validator_desc =
@@ -31,6 +29,9 @@ const Get_Product_view = (req, res) => {
               Product_Price: Product_Price,
               Product_Cata: Product_Cata,
             };
+
+
+            
             console.log(New_Product);
           } else {
             return res.send(
@@ -53,7 +54,7 @@ const Get_Product_view = (req, res) => {
       );
     }
   
-    return res.send;
+    return res.send('Product added successfully');
   };
   
   module.exports = { Get_Product_view, Post_Product_view };
