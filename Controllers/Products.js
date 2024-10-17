@@ -20,9 +20,13 @@ const Post_Product_view = (req, res) => {
 
   if (Validated_name == true) {
     if (Validated_decs == true) {
+        if(Validated_price == true){
+
+        }else{
+            return res.send(``)
+        }
     }else{
-        return res.send(`Product description cannot be null or empty."
-"Product description must contain at least 3 letters, can include numbers and special characters, and cannot exceed 100 words.`)
+        return res.send(`Product description cannot be null or empty, product description must contain at least 3 letters, can include numbers and special characters, and cannot exceed 100 words.`)
     }
   } else {
     return res.send(
