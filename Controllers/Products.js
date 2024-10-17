@@ -1,6 +1,15 @@
 //@method Get
 //http://localhost:5000/
-const Product_view = (req, res)=>{
+const Get_Product_view = (req, res)=>{
     return res.render('Products')
 };
-module.exports={Product_view};
+const Post_Product_view = (req, res)=>{
+    return res.render('Products')
+};
+
+
+
+
+
+
+module.exports={Get_Product_view, Post_Product_view};
