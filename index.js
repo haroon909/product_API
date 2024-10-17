@@ -3,7 +3,8 @@ const app = Express();
 const dotenv = require("dotenv").config();
 app.set('view engine','ejs');
 app.use(Express.json());
-
+const {Product_view}=require('./Controllers/Products');
+app.route("/").get(GetUser_Reg).post(PostUser_Reg);
 
 
 
