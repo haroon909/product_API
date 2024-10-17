@@ -19,9 +19,14 @@ const Post_Product_view = (req, res) => {
   const Validated_cata = Validator_cata.test(Product_Cata);
 
   if (Validated_name == true) {
+    if (Validated_decs == true) {
+    }else{
+        return res.send(`Product description cannot be null or empty."
+"Product description must contain at least 3 letters, can include numbers and special characters, and cannot exceed 100 words.`)
+    }
   } else {
     return res.send(
-      `Product name cannot be null or empty, product name must contain only letters and underscores ('_') for spacing, with no numbers or special characters, and must be at least 3 characters long.`
+      `Product name cannot be null or empty, product name must contain only letters and underscores ('_') only for spacing, with no numbers or special characters, and must be at least 3 characters long.`
     );
   }
 
