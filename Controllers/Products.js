@@ -53,7 +53,7 @@ const Get_Product_view = (req, res) => {
       );
     }
   
-    return res.render("Products");
+    return res.send;
   };
   
   module.exports = { Get_Product_view, Post_Product_view };
