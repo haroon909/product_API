@@ -9,7 +9,7 @@ const Post_Product_view = (req, res) => {
   const { Product_Name, Product_Desc, Product_Price, Product_Cata } = req.body;
   const Validator_name = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/;
   const Validator_desc =
-    /^(?=.{1,})(?=.*[A-Za-z]{3,})([A-Za-z0-9\s\W]{1,})(?<=\b(?:\S+\b\s*){0,100})$/;
+    /^(?=.{3,})(?=.*[A-Za-z])([A-Za-z0-9\s\W]{1,})(?<=\b(?:\S+\b\s*){0,100})$/;
   const Validator_price = /^(?=.{1,})\$[0-9]{1,6}$/;
   const Validator_cata = /^(?=.{1,})[A-Za-z]+(_[A-Za-z]+)*$/;
 
