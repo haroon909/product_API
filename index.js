@@ -10,5 +10,5 @@ app.use(Express.json());
 
 
 app.listen(process.env.Port, function(){
-    console.log(`Server is running On `)
+    console.log(`Server is running On Port: ${process.env.Port}`)
 })
