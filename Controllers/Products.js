@@ -9,8 +9,7 @@ const Get_Product_view = (req, res) => {
   
     const { Product_Name, Product_Desc, Product_Price, Product_Cata } = req.body;
     const Validator_name = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/;
-    const Validator_desc =
-      /^(?=.{3,})(?=.*[A-Za-z])([A-Za-z0-9\s\W]{1,})(?<=\b(?:\S+\b\s*){0,100})$/;
+    const Validator_desc = /^(?=.{3,100}$)(?=.*[A-Za-z])[A-Za-z0-9\s\W]*$/; 
     const Validator_price = /^(?=.{1,})\$[0-9]{1,6}$/;
     const Validator_cata = /^(?=.{1,})[A-Za-z]+(_[A-Za-z]+)*$/;
   
@@ -37,7 +36,7 @@ const Get_Product_view = (req, res) => {
                   body: JSON.stringify(New_Product),
                 }
               );
-              return res.status(200).send(`Product Added Successfully: ${New_Product}`)
+              return res.status(200).send(`Product Added Successfully: ${New_Product.stringify}`)
 
           } else {
             return res.send(
@@ -51,7 +50,7 @@ const Get_Product_view = (req, res) => {
         }
       } else {
         return res.send(
-          `Product description cannot be null or empty, product description must contain at least 3 letters, can include numbers and special characters, and cannot exceed 100 words.`
+          `Product description cannot be null or empty. It must contain at least 3 characters, including at least one letter, and can include numbers and special characters. The total length cannot exceed 100 characters.`
         );
       }
     } else {
