@@ -12,7 +12,7 @@ const Get_Product_view = (req, res) => {
     
     const Validator_name = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/; 
     const Validator_desc = /^(?=.{3,})(?=.*[A-Za-z])([A-Za-z0-9\s\W]{3,100})$/; 
-    const Validator_price = /^\$[0-9]{1,6}$/; 
+    const Validator_price = /^[0-9]{1,6}$/; 
     const Validator_cata = /^(?=.{3,})[A-Za-z]+(_[A-Za-z]+)*$/; 
   
 
