@@ -21,9 +21,14 @@ const Post_Product_view = (req, res) => {
   if (Validated_name == true) {
     if (Validated_decs == true) {
         if(Validated_price == true){
+            if(Validated_cata == true){
+
+            }else{
+                return res.send
+            }
 
         }else{
-            return res.send(``)
+            return res.send(`Product price cannot be null or empty. Product price must start with '$' and be a whole number between 1 and 6 digits, without spaces or special characters.`)
         }
     }else{
         return res.send(`Product description cannot be null or empty, product description must contain at least 3 letters, can include numbers and special characters, and cannot exceed 100 words.`)
