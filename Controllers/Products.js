@@ -29,9 +29,16 @@ const Get_Product_view = (req, res) => {
               Product_Price: Product_Price,
               Product_Cata: Product_Cata,
             };
+            const response = await fetch(
+                "https://66f1178a41537919154f7ad2.mockapi.io/React_test/products",
+                {
+                  headers: { "Content-Type": "application/json" },
+                  method: "POST",
+                  body: JSON.stringify(New_Product),
+                }
+              );
+              return res.send('Product added successfully');
 
-
-            
             console.log(New_Product);
           } else {
             return res.send(
@@ -54,7 +61,7 @@ const Get_Product_view = (req, res) => {
       );
     }
   
-    return res.send('Product added successfully');
+   
   };
   
   module.exports = { Get_Product_view, Post_Product_view };
