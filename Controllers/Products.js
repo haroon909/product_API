@@ -14,12 +14,12 @@ const Post_Product_view = (req, res) => {
   const Validator_cata = /^(?=.{1,})[A-Za-z]+(_[A-Za-z]+)*$/;
 
   const Validated_name = Validator_name.test(Product_Name);
-  const Validated_decs = Validator_desc.test(Product_Desc);
+  const Validated_desc = Validator_desc.test(Product_Desc);
   const Validated_price = Validator_price.test(Product_Price);
   const Validated_cata = Validator_cata.test(Product_Cata);
 
   if (Validated_name == true) {
-    if (Validated_decs == true) {
+    if (Validated_desc == true) {
       if (Validated_price == true) {
         if (Validated_cata == true) {
           const New_Product = {
