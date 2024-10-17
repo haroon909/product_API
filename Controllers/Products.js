@@ -21,7 +21,7 @@ const Post_Product_view = (req, res) => {
   if(Validated_name == true){
 
   }else{
-    
+    return res.send('Product name cannot be null or empty."')
   }
   
   return res.render("Products");
