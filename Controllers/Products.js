@@ -12,6 +12,12 @@ const Post_Product_view = (req, res) => {
     /^(?=.{1,})(?=.*[A-Za-z]{3,})([A-Za-z0-9\s\W]{1,})(?<=\b(?:\S+\b\s*){0,100})$/;
   const Validator_price = /^(?=.{1,})\$[0-9]{1,6}$/;
   const Validator_cata = /^(?=.{1,})[A-Za-z]+(_[A-Za-z]+)*$/;
+
+  const Validated_name = Validator_name.test(Product_Name);
+  const Validated_decs = Validator_name.test(Product_Name);
+  const Validated_ = Validator_name.test(Product_Name);
+  const Validated_name = Validator_name.test(Product_Name);
+  
   return res.render("Products");
 };
 
