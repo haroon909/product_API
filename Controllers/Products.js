@@ -22,9 +22,13 @@ const Post_Product_view = (req, res) => {
     if (Validated_decs == true) {
         if(Validated_price == true){
             if(Validated_cata == true){
+                const New_Product = {
+                    
+
+                }
 
             }else{
-                return res.send
+                return res.send(`Product category cannot be null or empty. Product category must contain only letters and underscores ('_') only for spacing, with no numbers or special characters, and must be at least 3 characters long.`)
             }
 
         }else{
