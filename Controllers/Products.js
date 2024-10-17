@@ -6,6 +6,7 @@ const Get_Product_view = (req, res) => {
 //@method Post
 //http://localhost:5000/
 const Post_Product_view = (req, res) => {
+    const {} = req.body;
   return res.render("Products");
 };
 
