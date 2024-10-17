@@ -8,7 +8,7 @@ const Get_Product_view = (req, res) => {
 const Post_Product_view = (req, res) => {
     const {Product_Name, Product_Desc, Product_Price, Product_Cat} = req.body;
     const Validator_Name = /^[A-Za-z]{3,}$/;
-    const Validator_ = /^[A-Za-z]{3,}$/;
+    const Validator_desc = /^[A-Za-z]{3,}$/;
 
   return res.render("Products");
 };
