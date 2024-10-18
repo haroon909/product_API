@@ -1,4 +1,7 @@
 //@method Get
+
+const { json } = require("express");
+
 //http://localhost:5000/
 const Get_Product_view = (req, res) => {
     return res.render("Products");
@@ -36,7 +39,7 @@ const Get_Product_view = (req, res) => {
                   body: JSON.stringify(New_Product),
                 }
               );
-              return res.status(200).send(`Product Added Successfully: ${New_Product.stringify}`)
+              return res.status(200).send(`Product Added Successfully: ${JSON.stringify(New_Product)}`)
 
           } else {
             return res.send(
