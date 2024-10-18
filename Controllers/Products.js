@@ -62,5 +62,14 @@ const Get_Product_view = (req, res) => {
       );
     }
   };
+  //@method Get
+//http://localhost:5000/Get_All_Products
+async function Get_All_Products(req, res) {
+    const response = await fetch(
+      "https://66f1178a41537919154f7ad2.mockapi.io/React_test/products"
+    );
+    const All_Products = await response.json();
+    return res.send(All_Products);
+  }
   
-  module.exports = { Get_Product_view, Post_Product_view };
+  module.exports = { Get_Product_view, Post_Product_view,Get_All_Products };
