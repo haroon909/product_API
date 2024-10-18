@@ -10,6 +10,7 @@ const {
   Get_All_Products,
 } = require("./Controllers/Products");
 app.route("/").get(Get_Product_view).post(Post_Product_view);
+app.route("/all_products").get(Get_All_Products);
 
 app.listen(process.env.Port, function () {
   console.log(`Server is running On Port: ${process.env.Port}`);
