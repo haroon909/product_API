@@ -61,8 +61,6 @@ const Get_Product_view = (req, res) => {
         `Product name cannot be null or empty, product name must contain only letters and underscores ('_') only for spacing, with no numbers or special characters, and must be at least 3 characters long.`
       );
     }
-  
-   
   };
   
   module.exports = { Get_Product_view, Post_Product_view };
